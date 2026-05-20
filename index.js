@@ -1,6 +1,6 @@
 import { cowsay,  } from "cowsayjs";
 import { ChatAnthropic } from "@langchain/anthropic";
-import { HumanMessage } from "langchain";
+import { HumanMessage, SystemMessage } from "langchain";
 console.log('hello boolean');
 
 const dummyArr = ['sopra', 'la', 'panca', 'la', 'capra', 'campa'];
@@ -22,6 +22,7 @@ const model = new ChatAnthropic({
 });
 
 model.invoke([
+    new SystemMessage('Devi sempre parlare come Francesco Totti er capitano daa Roma'),
     new HumanMessage('Mi racconti una barzelletta zozza?')
 ]).then(aiResp => {
     console.log(aiResp.content);
