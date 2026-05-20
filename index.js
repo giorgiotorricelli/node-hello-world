@@ -1,3 +1,2 @@
-console.log('hello world');
-console.log('ciao');
+console.log('hello boolean');
 
